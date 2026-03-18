@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP 2 - Formulaire d'Inscription</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <h1>Inscription Intermédiaire</h1>
+
+        <fieldset>
+            <legend>Informations personnelles</legend>
+            
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required autocomplete="family-name">
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required autocomplete="given-name">
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+
+            <label for="tel">Téléphone :</label>
+            <input type="tel" id="tel" name="tel" required 
+                   pattern="0[1-9][0-9]{8}" 
+                   placeholder="0612345678"
+                   title="Format français : 10 chiffres commençant par 0">
+            
+            <label for="dob">Date de naissance (Min 18 ans) :</label>
+            <input type="date" id="dob" name="dob" max="2008-01-01" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sécurité</legend>
+            <label for="pwd">Mot de passe :</label>
+            <input type="password" id="pwd" name="pwd" required
+                   pattern="(?=.*\d)(?=.*[A-Z]).{8,}"
+                   title="8 caractères minimum, une majuscule et un chiffre">
+            
+            <label for="pwd_conf">Confirmation :</label>
+            <input type="password" id="pwd_conf" name="pwd_conf" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Votre Profil</legend>
+            
+            <label>Genre :</label>
+            <input type="radio" id="homme" name="genre" value="H" required> <label for="homme" class="inline">Homme</label>
+            <input type="radio" id="femme" name="genre" value="F"> <label for="femme" class="inline">Femme</label>
+
+            <label for="pays">Pays :</label>
+            <input list="pays-list" id="pays" name="pays" required>
+            <datalist id="pays-list">
+                <option value="France">
+                <option value="Maroc">
+                <option value="Belgique">
+                <option value="Canada">
+                <option value="Sénégal">
+            </datalist>
+
+            <label>Centres d'intérêt :</label>
+            <input type="checkbox" id="sport" name="interet" value="sport"> <label for="sport" class="inline">Sport</label>
+            <input type="checkbox" id="tech" name="interet" value="tech"> <label for="tech" class="inline">Technologie</label>
+            <input type="checkbox" id="art" name="interet" value="art"> <label for="art" class="inline">Art</label>
+
+            <label for="bio">Biographie (max 200 caract.) :</label>
+            <textarea id="bio" name="bio" maxlength="200" rows="4"></textarea>
+
+            <label for="photo">Photo de profil :</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </fieldset>
+
+        <div class="footer-form">
+            <input type="checkbox" id="cgu" name="cgu" required>
+            <label for="cgu" class="inline">J'accepte les CGU</label>
+            <br><br>
+            <button type="submit">S'inscrire</button>
+        </div>
+    </form>
+
+</body>
+</html>
