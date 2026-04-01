@@ -1,0 +1,49 @@
+/* 1) Sélectionner tous les liens dans la navigation */
+.main-nav a {
+    color: blue;
+}
+
+/* 2) Sélectionner uniquement le lien actif */
+.main-nav a.active {
+    color:yellow;
+}
+
+/* 3) Sélectionner l'article avec la classe featured */
+.post.featured {
+   color: red;
+}
+
+/* 4) Sélectionner le premier paragraphe de chaque article */
+article p:first-of-type {
+    color: aquamarine;
+}
+
+/* 5) Sélectionner les éléments <li> pairs */
+li:nth-child(even) {
+    font-size: 20px;
+}
+
+/* 1) Classement par spécificité croissante 
+
+    1) p                (0,0,1)
+    2) .text            (0,1,0)
+    3) p.text           (0,1,1)
+    4) #main            (1,0,0)
+    5) #main .text p    (1,1,1)
+*/
+
+/* Ordre final */
+    p < .text < p.text < #main < #main .text p
+
+/* 2) Si deux règles ont la même spécificité 
+    -La dernière règle écrite gagne 
+*/
+
+/* 3) Pourquoi éviter !important ? 
+
+    1) casse la logique de spécificité
+    2) difficile à maintenir
+    3) rend le debug compliqué
+*/
+
+

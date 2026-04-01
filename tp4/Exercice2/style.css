@@ -1,0 +1,29 @@
+/*
+Exercice 2 : Box Model
+
+2.1 Comprendre le Box Model
+1. largeur total visible est 350px
+2. largeur total visible est 300px
+3. Reset universel
+*/
+
+*,*::before,*::after {
+        box-sizing: border-box;
+}
+
+/* 2.2 Centrer un élément: */
+
+html, body {
+    height: 100%;   
+    margin: 0;
+}
+
+div {
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background: lightblue;
+}
